@@ -1,78 +1,78 @@
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button>
+<mat-card style="margin-bottom: 10px;">
+  <mat-card-content>
 
-<h2>
-  RÚBRICA DE EVALUACIÓN DE PROYECTOS ARTICULADOS
-</h2>
-
-<h3>
-  "El puntaje máximo establecido por cada sub-criterio es 4 y el mínimo es 1.
-  (4:Muy bueno, 3: Bueno, 2: Regular y 1: Deficiente)"
-</h3>
-<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Base científica de la propuesta</ng-template>
-      <h3>
-        Descripción
-      </h3>
-      <p>
-        1. La introducción y la justificación de la propuesta del proyecto es clara, concisa y coherente con el tema a
-        desarrollar.
-      </p>
 
-      <h3>
-        Ponderación de Criterios
+      <div class="col-md-12">
 
-      </h3>
-      <p>
-        10%
-      </p>
-      <mat-form-field appearance="fill">
-        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
-        <input type="number" min="1" max="4" matInput placeholder="de 1 a 4 puntos" formControlName="firstCtrl"
-          required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext (click)="onSum()">Next</button>
+        <h2>
+          RÚBRICA DE EVALUACIÓN DE PROYECTOS ARTICULADOS
+        </h2>
+
+        <h3>
+          "El puntaje máximo establecido por cada sub-criterio es 4 y el mínimo es 1.
+          (4:Muy bueno, 3: Bueno, 2: Regular y 1: Deficiente)"
+        </h3>
+
+        <p>Base científica de la propuesta</p>
+        <h3>
+          Descripción
+        </h3>
+        <p>
+          1. La introducción y la justificación de la propuesta del proyecto es clara, concisa y coherente con el tema a
+          desarrollar.
+        </p>
+
+        <h3>
+          Ponderación de Criterios
+
+        </h3>
+        <p>
+          10%
+        </p>
+        <mat-form-field appearance="fill">
+          <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+          <input type="number" min="1" max="4" matInput placeholder="de 1 a 4 puntos" formControlName="firstCtrl"
+            required>
+        </mat-form-field>
       </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Objetivos</ng-template>
 
-      <h3>
-        Descripción
-      </h3>
-      <p>
-        El objetivo general y los objetivos específicos son formulados con claridad y guardan relación con los
-        resultados
-        esperados.
-      </p>
 
-      <h3>
-        Ponderación de Criterios
-      </h3>
-      <p>
-        10%
-      </p>
-      <mat-form-field appearance="fill">
-        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
-        <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
-          required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext (click)="onSum2()">Next</button>
+      <div class="col-md-12">
+
+
+        <p>Objetivos</p>
+
+        <h3>
+          Descripción
+        </h3>
+        <p>
+          El objetivo general y los objetivos específicos son formulados con claridad y guardan relación con los
+          resultados
+          esperados.
+        </p>
+
+        <h3>
+          Ponderación de Criterios
+        </h3>
+        <p>
+          10%
+        </p>
+        <mat-form-field appearance="fill">
+          <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+          <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
+            required>
+        </mat-form-field>
       </div>
-    </form>
-  </mat-step>
 
-  <mat-step [stepControl]="thirdFormGroup">
-    <form [formGroup]="thirdFormGroup">
-      <ng-template matStepLabel>Metodología</ng-template>
+      <div>
+        <!-- <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext (click)="onSum2()">Next</button> -->
+      </div>
+
+
+
+      <p>Metodología</p>
       <h3>
         Descripción
       </h3>
@@ -94,15 +94,13 @@
           required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <!-- <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button> -->
       </div>
-    </form>
-  </mat-step>
 
-  <mat-step [stepControl]="fourthFormGroup">
-    <form [formGroup]="fourthFormGroup">
-      <ng-template matStepLabel>Pertinencia</ng-template>
+
+
+      <p>Pertinencia</p>
 
       <h3>
         Descripción
@@ -126,15 +124,15 @@
           required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <!-- <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button> -->
       </div>
-    </form>
-  </mat-step>
 
-  <mat-step [stepControl]="fifthFormGroup">
-    <form [formGroup]="fifthFormGroup">
-      <ng-template matStepLabel>Relevancia</ng-template>
+
+
+
+
+      <p>Relevancia</p>
 
       <h3>
         Descripción
@@ -159,15 +157,13 @@
           required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <!-- <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button> -->
       </div>
-    </form>
-  </mat-step>
 
-  <mat-step [stepControl]="sixthFormGroup">
-    <form [formGroup]="sixthFormGroup">
-      <ng-template matStepLabel>Cronograma</ng-template>
+
+
+      <p>Cronograma</p>
 
       <h3>
         Descripción
@@ -190,15 +186,11 @@
           required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <!-- <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button> -->
       </div>
-    </form>
-  </mat-step>
 
-  <mat-step [stepControl]="seventhFormGroup">
-    <form [formGroup]="seventhFormGroup">
-      <ng-template matStepLabel>Presupuesto</ng-template>
+      <p>Presupuesto</p>
 
       <h3>
         Descripción
@@ -222,15 +214,11 @@
           required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <!-- <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button> -->
       </div>
-    </form>
-  </mat-step>
 
-  <mat-step [stepControl]="eighthFormGroup">
-    <form [formGroup]="eighthFormGroup">
-      <ng-template matStepLabel>Resultados esperados y transferencia de conocimiento A</ng-template>
+      <p>Resultados esperados y transferencia de conocimiento A</p>
 
       <h3>
         Descripción
@@ -254,15 +242,11 @@
           required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <!-- <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button> -->
       </div>
-    </form>
-  </mat-step>
 
-  <mat-step [stepControl]="ninthFormGroup">
-    <form [formGroup]="ninthFormGroup">
-      <ng-template matStepLabel>Resultados esperados y transferencia de conocimiento B</ng-template>
+      <p>Resultados esperados y transferencia de conocimiento B</p>
 
       <h3>
         Descripción
@@ -285,40 +269,43 @@
         <input type="number" min="1" max="4" matInput formControlName="ninthCtrl" placeholder="de 1 a 4 puntos"
           required>
       </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext (click)="sumatoriaNotas()">Next</button>
-      </div>
-    </form>
-  </mat-step>
+      <!-- <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext (click)="sumatoriaNotas()">Next</button>
+  </div> -->
 
-  <mat-step>
-    <ng-template matStepLabel>Resultados</ng-template>
+
+    </form>
+
+    <div>
+      <button mat-button (click)="sumatoriaNotas()">Calcular</button>
+    </div>
+
+    <p>Resultados</p>
     <p>Porcentaje Mínimo de Aprobación</p>
     <p><strong>76%</strong></p>
 
     <p>Puntaje Alcanzado</p>
-    <!-- <p><strong>{{porcentajeTotal}}</strong></p> -->
-    <!-- <p  *ngFor="let sumatoriaNotas()">
+
+    <p>
       <strong>
         {{porcentajeTotal}}
       </strong>
-    </p> -->
+    </p>
 
     <p>Resultado de la Evaluación</p>
-    <p><strong>Proyecto aprobado >= 76</strong></p>
-    <p><strong>Proyecto por Mejorar <= 75</strong>
-    </p>
-    <p><strong>Replantear Propuesta <= 50</strong>
-    </p>
+    <!-- <p><strong>Proyecto aprobado >= 76</strong></p>
+    <p><strong>Proyecto por Mejorar <= 75</strong></p>
+    <p><strong>Replantear Propuesta <= 50</strong></p> -->
 
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-      <button mat-button type="submit">Send</button>
 
-    </div>
-  </mat-step>
-</mat-stepper>
+
+    <p>
+      <strong>
+        {{ resultadoEvaluacion }}
+      </strong>
+    </p>
+  </mat-card-content>
+</mat-card>
 
 <router-outlet></router-outlet>

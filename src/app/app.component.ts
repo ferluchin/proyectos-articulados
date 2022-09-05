@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,78 +10,77 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class AppComponent {
   title = 'proyectos-articulados';
 
+  public resultadoEvaluacion: string = "";
+  public porcentajeTotal: number = 0;
+  public sumatoria: number = 0;
   //firstFormGroup: number = 0;
 
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
-  });
-
-  thirdFormGroup = this._formBuilder.group({
     thirdCtrl: ['', Validators.required],
-  });
-
-  fourthFormGroup = this._formBuilder.group({
     fourthCtrl: ['', Validators.required],
-  });
-
-  fifthFormGroup = this._formBuilder.group({
     fifthCtrl: ['', Validators.required],
-  });
-
-  sixthFormGroup = this._formBuilder.group({
     sixthCtrl: ['', Validators.required],
-  });
-
-  seventhFormGroup = this._formBuilder.group({
     seventhCtrl: ['', Validators.required],
-  });
-
-  eighthFormGroup = this._formBuilder.group({
     eighthCtrl: ['', Validators.required],
+    ninthCtrl: ['', Validators.required],
+
   });
 
-  ninthFormGroup = this._formBuilder.group({
-    ninthCtrl: ['', Validators.required],
-  });
 
   onSum() {
     console.log(this.firstFormGroup.get('firstCtrl').value);
   }
 
   onSum2() {
-    console.log((this.firstFormGroup.get('firstCtrl').value) + (this.secondFormGroup.get('secondCtrl').value));
+    console.log((this.firstFormGroup.get('firstCtrl').value) + (this.firstFormGroup.get('secondCtrl').value));
 
   }
 
   sumatoriaNotas() {
-    let sumatoria =
-      (this.firstFormGroup.get('firstCtrl').value) +
-      (this.secondFormGroup.get('secondCtrl').value) +
-      (this.thirdFormGroup.get('thirdCtrl').value) +
-      (this.fourthFormGroup.get('fourthCtrl').value) +
-      (this.fifthFormGroup.get('fifthCtrl').value) +
-      (this.sixthFormGroup.get('sixthCtrl').value) +
-      (this.seventhFormGroup.get('seventhCtrl').value) +
-      (this.eighthFormGroup.get('eighthCtrl').value) +
-      (this.ninthFormGroup.get('ninthCtrl').value);
-    console.log(sumatoria);
+    this.sumatoria =
+      (Number(this.firstFormGroup.get('firstCtrl').value)) +
+      (Number(this.firstFormGroup.get('secondCtrl').value)) +
+      (Number(this.firstFormGroup.get('thirdCtrl').value)) +
+      (Number(this.firstFormGroup.get('fourthCtrl').value)) +
+      (Number(this.firstFormGroup.get('fifthCtrl').value)) +
+      (Number(this.firstFormGroup.get('sixthCtrl').value)) +
+      (Number(this.firstFormGroup.get('seventhCtrl').value)) +
+      (Number(this.firstFormGroup.get('eighthCtrl').value)) +
+      (Number(this.firstFormGroup.get('ninthCtrl').value));
+    console.log(this.sumatoria);
 
-    let porcentajeTotal: number =
+    this.porcentajeTotal =
       (2.5 * Number(this.firstFormGroup.get('firstCtrl').value)) +
-      (2.5 * Number(this.secondFormGroup.get('secondCtrl').value)) +
-      (3.75 * Number(this.thirdFormGroup.get('thirdCtrl').value)) +
-      (2.50 * Number(this.fourthFormGroup.get('fourthCtrl').value)) +
-      (3.75 * Number(this.fifthFormGroup.get('fifthCtrl').value)) +
-      (1.25 * Number(this.sixthFormGroup.get('sixthCtrl').value)) +
-      (1.25 * Number(this.seventhFormGroup.get('seventhCtrl').value)) +
-      (3.75 * Number(this.eighthFormGroup.get('eighthCtrl').value)) +
-      (3.75 * Number(this.ninthFormGroup.get('ninthCtrl').value));
-    console.log(sumatoria);
+      (2.5 * Number(this.firstFormGroup.get('secondCtrl').value)) +
+      (3.75 * Number(this.firstFormGroup.get('thirdCtrl').value)) +
+      (2.50 * Number(this.firstFormGroup.get('fourthCtrl').value)) +
+      (3.75 * Number(this.firstFormGroup.get('fifthCtrl').value)) +
+      (1.25 * Number(this.firstFormGroup.get('sixthCtrl').value)) +
+      (1.25 * Number(this.firstFormGroup.get('seventhCtrl').value)) +
+      (3.75 * Number(this.firstFormGroup.get('eighthCtrl').value)) +
+      (3.75 * Number(this.firstFormGroup.get('ninthCtrl').value));
 
-    console.log(porcentajeTotal);
+
+
+    if (this.porcentajeTotal >= 76) {
+      this.resultadoEvaluacion = "Proyecto Aprobado";
+    } else {
+      if ((this.porcentajeTotal <= 75) && (this.porcentajeTotal >= 51)) {
+        this.resultadoEvaluacion = "Proyecto por Mejorar";
+      }
+      else {
+        if (this.porcentajeTotal <= 50) {
+          this.resultadoEvaluacion = "Replantear Propuesta";
+        }
+
+      }
+
+    }
+    console.log(this.sumatoria);
+    console.log(this.porcentajeTotal);
+    console.log(this.resultadoEvaluacion);
   }
   isLinear = false;
 

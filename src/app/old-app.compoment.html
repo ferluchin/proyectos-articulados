@@ -1,0 +1,324 @@
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+
+<h2>
+  RÚBRICA DE EVALUACIÓN DE PROYECTOS ARTICULADOS
+</h2>
+
+<h3>
+  "El puntaje máximo establecido por cada sub-criterio es 4 y el mínimo es 1.
+  (4:Muy bueno, 3: Bueno, 2: Regular y 1: Deficiente)"
+</h3>
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Base científica de la propuesta</ng-template>
+      <h3>
+        Descripción
+      </h3>
+      <p>
+        1. La introducción y la justificación de la propuesta del proyecto es clara, concisa y coherente con el tema a
+        desarrollar.
+      </p>
+
+      <h3>
+        Ponderación de Criterios
+
+      </h3>
+      <p>
+        10%
+      </p>
+      <mat-form-field appearance="fill">
+        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+        <input type="number" min="1" max="4" matInput placeholder="de 1 a 4 puntos" formControlName="firstCtrl"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext (click)="onSum()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Objetivos</ng-template>
+
+      <h3>
+        Descripción
+      </h3>
+      <p>
+        El objetivo general y los objetivos específicos son formulados con claridad y guardan relación con los
+        resultados
+        esperados.
+      </p>
+
+      <h3>
+        Ponderación de Criterios
+      </h3>
+      <p>
+        10%
+      </p>
+      <mat-form-field appearance="fill">
+        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+        <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext (click)="onSum2()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Metodología</ng-template>
+      <h3>
+        Descripción
+      </h3>
+      <p>
+        La metodología está formulada adecuadamente y permite cumplir con los objetivos planteados y en el plazo
+        establecido para el proyecto
+      </p>
+
+      <h3>
+        Ponderación de Criterios
+
+      </h3>
+      <p>
+        15%
+      </p>
+      <mat-form-field appearance="fill">
+        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+        <input type="number" min="1" max="4" matInput formControlName="thirdCtrl" placeholder="de 1 a 4 puntos"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="fourthFormGroup">
+    <form [formGroup]="fourthFormGroup">
+      <ng-template matStepLabel>Pertinencia</ng-template>
+
+      <h3>
+        Descripción
+      </h3>
+      <p>
+        La propuesta se ajusta a los términos de la convocatoria y los resultados esperados se ajustan a una o más
+        funciones
+        sustantivas.
+      </p>
+
+      <h3>
+        Ponderación de Criterios
+
+      </h3>
+      <p>
+        10%
+      </p>
+      <mat-form-field appearance="fill">
+        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+        <input type="number" min="1" max="4" matInput formControlName="fourthCtrl" placeholder="de 1 a 4 puntos"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="fifthFormGroup">
+    <form [formGroup]="fifthFormGroup">
+      <ng-template matStepLabel>Relevancia</ng-template>
+
+      <h3>
+        Descripción
+      </h3>
+      <p>
+        La propuesta del proyecto introduce un cambio innovador, promueve el desarrollo de investigaciones, implementa
+        cambios en la enseñanza aprendizaje o el desarrollo de prototipos que resuelvan problemas sociales que afectan a
+        la
+        población del país.
+      </p>
+
+      <h3>
+        Ponderación de Criterios
+
+      </h3>
+      <p>
+        15%
+      </p>
+      <mat-form-field appearance="fill">
+        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+        <input type="number" min="1" max="4" matInput formControlName="fifthCtrl" placeholder="de 1 a 4 puntos"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="sixthFormGroup">
+    <form [formGroup]="sixthFormGroup">
+      <ng-template matStepLabel>Cronograma</ng-template>
+
+      <h3>
+        Descripción
+      </h3>
+      <p>
+        6. El cronograma de la propuesta describe actividades claras, sucesivas y consecuentes para el cumplimiento de
+        objetivos.
+      </p>
+
+      <h3>
+        Ponderación de Criterios
+
+      </h3>
+      <p>
+        5%
+      </p>
+      <mat-form-field appearance="fill">
+        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+        <input type="number" min="1" max="4" matInput formControlName="sixthCtrl" placeholder="de 1 a 4 puntos"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="seventhFormGroup">
+    <form [formGroup]="seventhFormGroup">
+      <ng-template matStepLabel>Presupuesto</ng-template>
+
+      <h3>
+        Descripción
+      </h3>
+      <p>
+        7. La utilización y distribución del presupuesto se encuentran justificados.
+
+      </p>
+
+      <h3>
+        Ponderación de Criterios
+
+      </h3>
+      <p>
+        5%
+      </p>
+
+      <mat-form-field appearance="fill">
+        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+        <input type="number" min="1" max="4" matInput formControlName="seventhCtrl" placeholder="de 1 a 4 puntos"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="eighthFormGroup">
+    <form [formGroup]="eighthFormGroup">
+      <ng-template matStepLabel>Resultados esperados y transferencia de conocimiento A</ng-template>
+
+      <h3>
+        Descripción
+      </h3>
+      <p>
+        8. El proyecto genera como parte de sus resultados publicaciones científicas, prototipos, registros de propiedad
+        intelectual u otros resultados esperados de acuerdo a la convocatoria
+      </p>
+
+      <h3>
+        Ponderación de Criterios
+
+      </h3>
+      <p>
+        15%
+      </p>
+
+      <mat-form-field appearance="fill">
+        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+        <input type="number" min="1" max="4" matInput formControlName="eighthCtrl" placeholder="de 1 a 4 puntos"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="ninthFormGroup">
+    <form [formGroup]="ninthFormGroup">
+      <ng-template matStepLabel>Resultados esperados y transferencia de conocimiento B</ng-template>
+
+      <h3>
+        Descripción
+      </h3>
+      <p>
+        9. Se puede evidenciar que los resultados generados por el proyecto planteado tienen potencial de transferencia
+        de conocimiento en diferentes sectores como el académico, político, social y productivo.
+
+      </p>
+
+      <h3>
+        Ponderación de Criterios
+
+      </h3>
+      <p>
+        15%
+      </p>
+      <mat-form-field appearance="fill">
+        <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
+        <input type="number" min="1" max="4" matInput formControlName="ninthCtrl" placeholder="de 1 a 4 puntos"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext (click)="sumatoriaNotas()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Resultados</ng-template>
+    <p>Porcentaje Mínimo de Aprobación</p>
+    <p><strong>76%</strong></p>
+
+    <p>Puntaje Alcanzado</p>
+    <!-- <p><strong>{{porcentajeTotal}}</strong></p> -->
+    <!-- <p  *ngFor="let sumatoriaNotas()">
+      <strong>
+        {{porcentajeTotal}}
+      </strong>
+    </p> -->
+
+    <p>Resultado de la Evaluación</p>
+    <p><strong>Proyecto aprobado >= 76</strong></p>
+    <p><strong>Proyecto por Mejorar <= 75</strong>
+    </p>
+    <p><strong>Replantear Propuesta <= 50</strong>
+    </p>
+
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button type="submit">Send</button>
+
+    </div>
+  </mat-step>
+</mat-stepper>
+
+<router-outlet></router-outlet>
