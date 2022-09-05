@@ -230,7 +230,7 @@
 
   <mat-step [stepControl]="eighthFormGroup">
     <form [formGroup]="eighthFormGroup">
-      <ng-template matStepLabel>Resultados esperados y transferencia de conocimiento</ng-template>
+      <ng-template matStepLabel>Resultados esperados y transferencia de conocimiento A</ng-template>
 
       <h3>
         Descripción
@@ -262,7 +262,7 @@
 
   <mat-step [stepControl]="ninthFormGroup">
     <form [formGroup]="ninthFormGroup">
-      <ng-template matStepLabel>Resultados esperados y transferencia de conocimiento</ng-template>
+      <ng-template matStepLabel>Resultados esperados y transferencia de conocimiento B</ng-template>
 
       <h3>
         Descripción
@@ -287,7 +287,7 @@
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext (click)="sumatoriaNotas()">Next</button>
       </div>
     </form>
   </mat-step>

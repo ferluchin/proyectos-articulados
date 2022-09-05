@@ -10,6 +10,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class AppComponent {
   title = 'proyectos-articulados';
 
+  //firstFormGroup: number = 0;
+
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
@@ -18,39 +20,54 @@ export class AppComponent {
   });
 
   thirdFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    thirdCtrl: ['', Validators.required],
   });
 
   fourthFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    fourthCtrl: ['', Validators.required],
   });
 
   fifthFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    fifthCtrl: ['', Validators.required],
   });
 
   sixthFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    sixthCtrl: ['', Validators.required],
   });
 
   seventhFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    seventhCtrl: ['', Validators.required],
   });
 
   eighthFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    eighthCtrl: ['', Validators.required],
   });
 
   ninthFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    ninthCtrl: ['', Validators.required],
   });
 
   onSum() {
-    console.log(this.firstFormGroup.value);
+    console.log(this.firstFormGroup.get('firstCtrl').value);
   }
 
   onSum2() {
-    //console.log((this.firstFormGroup.value) + this.secondFormGroup.value);
+    console.log((this.firstFormGroup.get('firstCtrl').value) + (this.secondFormGroup.get('secondCtrl').value));
+
+  }
+
+  sumatoriaNotas() {
+    let sumatoria =
+      (this.firstFormGroup.get('firstCtrl').value) +
+      (this.secondFormGroup.get('secondCtrl').value) +
+      (this.thirdFormGroup.get('thirdCtrl').value) +
+      (this.fourthFormGroup.get('fourthCtrl').value) +
+      (this.fifthFormGroup.get('fifthCtrl').value) +
+      (this.sixthFormGroup.get('sixthCtrl').value) +
+      (this.seventhFormGroup.get('seventhCtrl').value) +
+      (this.eighthFormGroup.get('eighthCtrl').value) +
+      (this.ninthFormGroup.get('ninthCtrl').value);
+    console.log(sumatoria);
 
   }
   isLinear = false;
