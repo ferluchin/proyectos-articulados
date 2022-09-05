@@ -69,6 +69,19 @@ export class AppComponent {
       (this.ninthFormGroup.get('ninthCtrl').value);
     console.log(sumatoria);
 
+    let porcentajeTotal: number =
+      (2.5 * Number(this.firstFormGroup.get('firstCtrl').value)) +
+      (2.5 * Number(this.secondFormGroup.get('secondCtrl').value)) +
+      (3.75 * Number(this.thirdFormGroup.get('thirdCtrl').value)) +
+      (2.50 * Number(this.fourthFormGroup.get('fourthCtrl').value)) +
+      (3.75 * Number(this.fifthFormGroup.get('fifthCtrl').value)) +
+      (1.25 * Number(this.sixthFormGroup.get('sixthCtrl').value)) +
+      (1.25 * Number(this.seventhFormGroup.get('seventhCtrl').value)) +
+      (3.75 * Number(this.eighthFormGroup.get('eighthCtrl').value)) +
+      (3.75 * Number(this.ninthFormGroup.get('ninthCtrl').value));
+    console.log(sumatoria);
+
+    console.log(porcentajeTotal);
   }
   isLinear = false;
 

@@ -90,7 +90,7 @@
       </p>
       <mat-form-field appearance="fill">
         <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
-        <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
+        <input type="number" min="1" max="4" matInput formControlName="thirdCtrl" placeholder="de 1 a 4 puntos"
           required>
       </mat-form-field>
       <div>
@@ -122,7 +122,7 @@
       </p>
       <mat-form-field appearance="fill">
         <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
-        <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
+        <input type="number" min="1" max="4" matInput formControlName="fourthCtrl" placeholder="de 1 a 4 puntos"
           required>
       </mat-form-field>
       <div>
@@ -155,7 +155,7 @@
       </p>
       <mat-form-field appearance="fill">
         <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
-        <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
+        <input type="number" min="1" max="4" matInput formControlName="fifthCtrl" placeholder="de 1 a 4 puntos"
           required>
       </mat-form-field>
       <div>
@@ -186,7 +186,7 @@
       </p>
       <mat-form-field appearance="fill">
         <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
-        <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
+        <input type="number" min="1" max="4" matInput formControlName="sixthCtrl" placeholder="de 1 a 4 puntos"
           required>
       </mat-form-field>
       <div>
@@ -218,7 +218,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
-        <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
+        <input type="number" min="1" max="4" matInput formControlName="seventhCtrl" placeholder="de 1 a 4 puntos"
           required>
       </mat-form-field>
       <div>
@@ -250,7 +250,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
-        <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
+        <input type="number" min="1" max="4" matInput formControlName="eighthCtrl" placeholder="de 1 a 4 puntos"
           required>
       </mat-form-field>
       <div>
@@ -282,7 +282,7 @@
       </p>
       <mat-form-field appearance="fill">
         <mat-label>CALIFICACIÓN ASIGNADA</mat-label>
-        <input type="number" min="1" max="4" matInput formControlName="secondCtrl" placeholder="de 1 a 4 puntos"
+        <input type="number" min="1" max="4" matInput formControlName="ninthCtrl" placeholder="de 1 a 4 puntos"
           required>
       </mat-form-field>
       <div>
@@ -298,12 +298,19 @@
     <p><strong>76%</strong></p>
 
     <p>Puntaje Alcanzado</p>
-    <p><strong>76%</strong></p>
+    <!-- <p><strong>{{porcentajeTotal}}</strong></p> -->
+    <!-- <p  *ngFor="let sumatoriaNotas()">
+      <strong>
+        {{porcentajeTotal}}
+      </strong>
+    </p> -->
 
-        <p>Resultado de la Evaluación</p>
-        <p><strong>Proyecto aprobado >= 76</strong></p>
-        <p><strong>Proyecto por Mejorar <= 75</strong></p>
-        <p><strong>Replantear Propuesta <= 50</strong></p>
+    <p>Resultado de la Evaluación</p>
+    <p><strong>Proyecto aprobado >= 76</strong></p>
+    <p><strong>Proyecto por Mejorar <= 75</strong>
+    </p>
+    <p><strong>Replantear Propuesta <= 50</strong>
+    </p>
 
     <div>
       <button mat-button matStepperPrevious>Back</button>
