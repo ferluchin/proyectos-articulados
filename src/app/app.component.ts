@@ -45,8 +45,14 @@ export class AppComponent {
     secondCtrl: ['', Validators.required],
   });
 
+  onSum() {
+    console.log(this.firstFormGroup.value);
+  }
 
+  onSum2() {
+    //console.log((this.firstFormGroup.value) + this.secondFormGroup.value);
 
+  }
   isLinear = false;
 
   constructor(private _formBuilder: FormBuilder) { }

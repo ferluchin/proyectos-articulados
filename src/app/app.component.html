@@ -35,7 +35,7 @@
           required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext (click)="onSum()">Next</button>
       </div>
     </form>
   </mat-step>
@@ -65,7 +65,7 @@
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext (click)="onSum2()">Next</button>
       </div>
     </form>
   </mat-step>
@@ -308,6 +308,8 @@
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button type="submit">Send</button>
+
     </div>
   </mat-step>
 </mat-stepper>
