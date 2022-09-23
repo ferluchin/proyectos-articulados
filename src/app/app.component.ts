@@ -24,7 +24,7 @@ export class AppComponent {
     sixthCtrl: ['', Validators.required],
     seventhCtrl: ['', Validators.required],
     eighthCtrl: ['', Validators.required],
-    ninthCtrl: ['', Validators.required],
+    // ninthCtrl: ['', Validators.required],
 
   });
 
@@ -47,20 +47,20 @@ export class AppComponent {
       (Number(this.firstFormGroup.get('fifthCtrl').value)) +
       (Number(this.firstFormGroup.get('sixthCtrl').value)) +
       (Number(this.firstFormGroup.get('seventhCtrl').value)) +
-      (Number(this.firstFormGroup.get('eighthCtrl').value)) +
-      (Number(this.firstFormGroup.get('ninthCtrl').value));
+      (Number(this.firstFormGroup.get('eighthCtrl').value));
+      // (Number(this.firstFormGroup.get('ninthCtrl').value));
     console.log(this.sumatoria);
 
     this.porcentajeTotal =
       (2.5 * Number(this.firstFormGroup.get('firstCtrl').value)) +
       (2.5 * Number(this.firstFormGroup.get('secondCtrl').value)) +
       (3.75 * Number(this.firstFormGroup.get('thirdCtrl').value)) +
-      (2.50 * Number(this.firstFormGroup.get('fourthCtrl').value)) +
+      (3.75 * Number(this.firstFormGroup.get('fourthCtrl').value)) +
       (3.75 * Number(this.firstFormGroup.get('fifthCtrl').value)) +
       (1.25 * Number(this.firstFormGroup.get('sixthCtrl').value)) +
-      (1.25 * Number(this.firstFormGroup.get('seventhCtrl').value)) +
-      (3.75 * Number(this.firstFormGroup.get('eighthCtrl').value)) +
-      (3.75 * Number(this.firstFormGroup.get('ninthCtrl').value));
+      (3.75 * Number(this.firstFormGroup.get('seventhCtrl').value)) +
+      (3.75 * Number(this.firstFormGroup.get('eighthCtrl').value));
+      // (3.75 * Number(this.firstFormGroup.get('ninthCtrl').value));
 
 
 
